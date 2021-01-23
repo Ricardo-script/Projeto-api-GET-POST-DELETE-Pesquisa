@@ -1,3 +1,54 @@
+# Utilizando Server local:
+
+### `npm install --save json-server axios`
+
+- Criar uma pasta *fora de src chamada server
+	- Dentro de server criar arquivo db.json
+	- criar dados json no arquivo db.json:
+	
+
+----------------------------------------------------------------------------------------------------------------------------------------
+Arquivo db.json:------------------------------------------------------------------------------------------------------------------------
+
+	{
+		"posts":[]
+	}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+	- no arquivo package.json inserir o seguinte codigo em "scritps":
+	
+		"mock": "json-server --watch server/db.json --port 3006 --delay 2000" 
+
+		como no exemplo abaixo:
+
+
+Arquivo package.json :-------------------------------------------------------------------------------------------------------------------
+
+"scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "mock": "json-server --watch server/db.json --port 3006 -- delay 2000" 
+  },
+  
+ -------------------------------------------------------------------------------------------------------------------------------------------
+
+Para startar o servidor, com o botão direito da pasta que contem o projeto abra-o no CMD e digitar o seguinte comando:
+
+	### `npm run mock`
+	
+	logo após o servidor ficará rodando no CMD a parte
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
