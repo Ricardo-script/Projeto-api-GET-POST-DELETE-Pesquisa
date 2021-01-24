@@ -25,12 +25,17 @@ function Listar(){
     },[]);
 
     function excluir(){
-       
         axios
         .delete(`http://localhost:3006/posts/${id}`);
 
         alert('O Item ' + id + ' foi excluído!');
-        
+    }
+
+    function excluirLinha(itemId){ //itemId = item.id dentro de onClick
+        axios
+        .delete(`http://localhost:3006/posts/${itemId}`);
+
+        alert('O Item ' + itemId + ' foi excluído!');
     }
 
 
@@ -65,7 +70,7 @@ function Listar(){
                             <td>{item.profissao}</td>
                             <td>{item.anos}</td>
                             <td>{item.sobre}</td>
-                            <td>{item.id}</td>
+                            <td onClick={() => excluirLinha(item.id)}>X</td>
                         </tr>  
                         );
                     })}
