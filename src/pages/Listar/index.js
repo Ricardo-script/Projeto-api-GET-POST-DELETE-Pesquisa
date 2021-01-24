@@ -24,11 +24,13 @@ function Listar(){
 
     },[]);
 
-    function excluir(){
+    function excluir(){      
         axios
         .delete(`http://localhost:3006/posts/${id}`);
 
         alert('O Item ' + id + ' foi excluído!');
+        setDados(dados.filter(exc => exc.id !== JSON.parse(id)));//convertido para objeto pois o id pego do input era objeto
+        
     }
 
     function excluirLinha(itemId){ //itemId = item.id dentro de onClick
@@ -36,6 +38,7 @@ function Listar(){
         .delete(`http://localhost:3006/posts/${itemId}`);
 
         alert('O Item ' + itemId + ' foi excluído!');
+        setDados(dados.filter(excluido => excluido.id !== itemId));//o navegador nao atualiza a pagina, então se filtra
     }
 
 
